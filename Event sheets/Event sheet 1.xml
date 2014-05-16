@@ -26,8 +26,8 @@
                     <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
                 </action>
                 <action id="-7" name="Set size" sid="6902198604791971" type="player">
-                    <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
-                    <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
+                    <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
+                    <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
                 </action>
             </actions>
             <sub-events>
@@ -131,6 +131,9 @@
                     <param id="0" name="Animation">&quot;jump&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action id="5" name="Set frame" sid="3092304532628403" type="player">
+                    <param id="0" name="Frame number">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="3419440123113753">
@@ -163,6 +166,9 @@
                 <action id="4" name="Set animation" sid="9059799385491161" type="player">
                     <param id="0" name="Animation">&quot;jump&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="4761109853100582" type="player">
+                    <param id="0" name="Frame number">1</param>
                 </action>
             </actions>
         </event-block>
