@@ -8,7 +8,7 @@
     <author-website></author-website>
     <app-id>com.snel</app-id>
     <unique-id>nc665xx84h8e</unique-id>
-    <saved-with-version>16402</saved-with-version>
+    <saved-with-version>16800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
@@ -132,10 +133,14 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="Gamepad" sid="6028973174576782">
+            <plugin id="gamepad" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
         <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder expanded="0">
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -156,6 +161,11 @@
                 <roll-off-factor>1</roll-off-factor>
                 <speed-of-sound>5000</speed-of-sound>
                 <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Gamepad" uid="14">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
     </global-instances>
