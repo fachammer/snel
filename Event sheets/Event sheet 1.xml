@@ -172,40 +172,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block any="1" sid="3759399153922049">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="4071362224035974" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-                <condition id="3" name="Is button down" sid="4914485568882411" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">15</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="3092411457978059" type="player">
-                    <param id="0" name="Instance variable">mirrored</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="292754302467165">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="8283027482900686" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-                <condition id="3" name="Is button down" sid="4068300610358118" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">14</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="4523226024674515" type="player">
-                    <param id="0" name="Instance variable">mirrored</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="3474353154934707">
             <conditions>
                 <condition id="0" name="On function" sid="6202849901939404" type="Function">
@@ -244,8 +210,11 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="670225060822492">
+        <event-block any="1" sid="670225060822492">
             <conditions>
+                <condition id="0" name="On key pressed" sid="9707470323269806" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
                 <condition id="6" name="On button pressed" sid="8802957670339218" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">0</param>
@@ -257,29 +226,55 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1830522066821311">
+        <event-block any="1" sid="1830522066821311">
             <conditions>
+                <condition id="2" name="Key is down" sid="4071362224035974" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
                 <condition id="3" name="Is button down" sid="5647377975620783" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">15</param>
+                </condition>
+                <condition id="5" name="Compare axis" sid="8245778117210704" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">0</param>
+                    <param id="2" name="Comparison">4</param>
+                    <param id="3" name="Value">5</param>
                 </condition>
             </conditions>
             <actions>
                 <action behavior="Platform" id="7" name="Simulate control" sid="3530738163884961" type="playerCollision">
                     <param id="0" name="Control">1</param>
                 </action>
+                <action id="-13" name="Set boolean" sid="3092411457978059" type="player">
+                    <param id="0" name="Instance variable">mirrored</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="3575013091820103">
+        <event-block any="1" sid="3575013091820103">
             <conditions>
+                <condition id="2" name="Key is down" sid="8283027482900686" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
                 <condition id="3" name="Is button down" sid="7403243923227063" type="Gamepad">
                     <param id="0" name="Gamepad">0</param>
                     <param id="1" name="Button">14</param>
+                </condition>
+                <condition id="5" name="Compare axis" sid="869366494988214" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Axis">0</param>
+                    <param id="2" name="Comparison">2</param>
+                    <param id="3" name="Value">-5</param>
                 </condition>
             </conditions>
             <actions>
                 <action behavior="Platform" id="7" name="Simulate control" sid="4241641027256938" type="playerCollision">
                     <param id="0" name="Control">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="4523226024674515" type="player">
+                    <param id="0" name="Instance variable">mirrored</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -292,6 +287,19 @@
             </conditions>
             <actions>
                 <action id="-26" name="Restart layout" sid="5125817900040075" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="8768661852498106">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="6025903427596795" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="9642870804446828" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
             </actions>
         </event-block>
     </events>
