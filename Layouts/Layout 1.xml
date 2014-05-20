@@ -128,6 +128,7 @@
                     <instance-variables>
                         <minJumpStrength>300</minJumpStrength>
                         <maxJumpStrength>1100</maxJumpStrength>
+                        <tempHeight>0</tempHeight>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -268,7 +269,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>2560</x>
-                        <y>2304</y>
+                        <y>2240</y>
                         <z>0</z>
                         <width>2144</width>
                         <height>384</height>

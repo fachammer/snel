@@ -103,6 +103,7 @@
             <instance-variables>
                 <instance-variable name="minJumpStrength" sid="5032470670675822" type="number" />
                 <instance-variable name="maxJumpStrength" sid="1223865948748796" type="number" />
+                <instance-variable comment="Temporary height storage." name="tempHeight" sid="2533110941361441" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="7702235767688374">
