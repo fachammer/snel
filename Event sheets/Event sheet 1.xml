@@ -13,7 +13,7 @@
                     <param id="1" name="Image point (optional)">0</param>
                 </action>
                 <action id="0" name="Set text" sid="2626357644527631" type="timer">
-                    <param id="0" name="Text">time</param>
+                    <param id="0" name="Text">TimeManager.MMSSMM(&quot;TimeManagerCounter&quot;)</param>
                 </action>
                 <action id="-10" name="Set value" sid="7302077292288723" type="playerCollision">
                     <param id="0" name="Instance variable">tempHeight</param>
@@ -421,6 +421,17 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="3378187360013773">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7484168587982734" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Time counter" sid="802641280099203" type="TimeManager">
+                    <param id="0" name="Label">&quot;TimeManagerCounter&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
