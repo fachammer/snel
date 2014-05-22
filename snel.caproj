@@ -141,6 +141,26 @@
         <object-type name="Browser" sid="2116133952081868">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="checkpoint" sid="9593217420454252">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="If the checkpoint is activated." name="activated" sid="354740541255391" type="boolean" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4243452338858076" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0" y="0.25" />
+                            <point x="0.445313" y="0.015625" />
+                            <point x="0.992188" y="0.273438" />
+                            <point x="0.871094" y="0.986328" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">

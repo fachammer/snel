@@ -361,13 +361,66 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2939972395318303">
+        <event-block any="1" sid="2939972395318303">
             <conditions>
                 <condition id="-4" name="Is outside layout" sid="6542091762023377" type="playerCollision" />
             </conditions>
-            <actions>
-                <action id="-26" name="Restart layout" sid="679884034977761" type="System" />
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="5245047750963103">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9832948166805993" type="checkpoint">
+                            <param id="0" name="Instance variable">activated</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2522682448717112" type="playerCollision" />
+                        <action id="0" name="Spawn another object" sid="7144702003871885" type="checkpoint">
+                            <param id="0" name="Object">playerCollision</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2358272467109066">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4532110905734723" type="player">
+                    <param id="0" name="Object">checkpoint</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5023239070360169">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="8512662275441272" type="System">
+                            <param id="0" name="Object">checkpoint</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="2019592241142641" type="checkpoint">
+                            <param id="0" name="Instance variable">activated</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="8635157174651265" type="checkpoint">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="196481897311807">
+                    <conditions />
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="4892409162639121" type="checkpoint">
+                            <param id="0" name="Instance variable">activated</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="2097795565436972" type="checkpoint">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
