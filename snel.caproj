@@ -8,7 +8,7 @@
     <author-website></author-website>
     <app-id>com.snel</app-id>
     <unique-id>nc665xx84h8e</unique-id>
-    <saved-with-version>16800</saved-with-version>
+    <saved-with-version>16300</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -58,9 +58,9 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3188802338779478" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -149,7 +149,7 @@
             </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4243452338858076" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <collision-poly>
                             <point x="0" y="0.25" />
                             <point x="0.445313" y="0.015625" />
@@ -158,12 +158,58 @@
                             <point x="0" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="TimeManager" sid="6399985906500233">
             <plugin id="CAMFTimeManager" />
+        </object-type>
+        <object-type name="background" sid="5308766747253733">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3935749085610554" speed="5">
+                    <frame duration="1" hotspotX="-0.584" hotspotY="0.508" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="cloud" sid="5786729141391135">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8360107404854557" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.28125" y="0.28125" />
+                            <point x="0.5" y="0.1875" />
+                            <point x="0.75" y="0.25" />
+                            <point x="1" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="movingBlock" sid="6639524750385909">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="xRange" sid="7146349539090481" type="number" />
+                <instance-variable name="yRange" sid="854636731361692" type="number" />
+                <instance-variable name="speed" sid="4120363203415316" type="number" />
+                <instance-variable name="startX" sid="8087006408025306" type="number" />
+                <instance-variable name="startY" sid="2804662181402991" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="8893487259798725">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9925918487784268" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

@@ -3,141 +3,487 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="6997015358620516">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="3034940027277259" type="System" />
-            </conditions>
-            <actions>
-                <action id="-4" name="Set position to another object" sid="2893725768475685" type="player">
-                    <param id="0" name="Object">playerCollision</param>
-                    <param id="1" name="Image point (optional)">0</param>
-                </action>
-                <action id="0" name="Set text" sid="2626357644527631" type="timer">
-                    <param id="0" name="Text">TimeManager.MMSSMM(&quot;TimeManagerCounter&quot;)</param>
-                </action>
-                <action id="-10" name="Set value" sid="7302077292288723" type="playerCollision">
-                    <param id="0" name="Instance variable">tempHeight</param>
-                    <param id="1" name="Value">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
-                </action>
-            </actions>
+        <event-group collapsed="1" description="" sid="8319577293192605" title="Controls">
             <sub-events>
-                <event-block sid="4272268816681272">
+                <event-block any="1" sid="670225060822492">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="5592553357694367" type="playerCollision">
-                            <param id="0" name="Instance variable">tempHeight</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">playerCollision.Height</param>
+                        <condition id="0" name="On key pressed" sid="9707470323269806" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="8802957670339218" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6960449020951888" type="playerCollision">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="860848635495649">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="2235490433226763" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="5125817900040075" type="System" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="1830522066821311">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="4071362224035974" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="5647377975620783" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="8245778117210704" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="3530738163884961" type="playerCollision">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3092411457978059" type="player">
+                            <param id="0" name="Instance variable">mirrored</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="3575013091820103">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8283027482900686" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="7403243923227063" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">14</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="869366494988214" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">-5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4241641027256938" type="playerCollision">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4523226024674515" type="player">
+                            <param id="0" name="Instance variable">mirrored</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="1190127142046084" title="Animation">
+            <sub-events>
+                <event-block sid="5636225563831785">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="502075248275505" type="playerCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6292779231067697" type="player">
+                            <param id="0" name="Animation">&quot;walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4934303815682191">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="4817051061769987" type="playerCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1672869145602346" type="player">
+                            <param id="0" name="Animation">&quot;jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3092304532628403" type="player">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3419440123113753">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="9895797693342818" type="playerCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="971596673600614" type="player">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8887687188196776">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="33642831053532" type="playerCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7457313928786218" type="player">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5390423034203806">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="3484881688375342" type="playerCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9059799385491161" type="player">
+                            <param id="0" name="Animation">&quot;jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="4761109853100582" type="player">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9227411981907347">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="7687591667305674" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="2893725768475685" type="player">
+                            <param id="0" name="Object">playerCollision</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <event-block sid="1186803562066591">
+                        <event-block sid="2049298380589945">
                             <conditions>
-                                <condition id="9" inverted="1" name="Is overlapping at offset" sid="786452599380622" type="player">
-                                    <param id="0" name="Object">block</param>
-                                    <param id="1" name="Offset X">0</param>
-                                    <param id="2" name="Offset Y">-1</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="2307892626556414" type="player">
+                                    <param id="0" name="Instance variable">mirrored</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="4665914688084265" type="Function">
-                                    <param id="0" name="Name">&quot;setAttributes&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="7" name="Set mirrored" sid="7555888997650103" type="player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="359138349554718">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4507939236292383" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="7735751842769747" type="player">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="9926907770085236">
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3403268183634443" title="Audio">
+            <sub-events>
+                <event-block sid="7474996103907796">
                     <conditions>
-                        <condition id="-22" name="Else" sid="8260079057744671" type="System" />
+                        <condition behavior="Platform" id="5" name="On jump" sid="2667781297612718" type="playerCollision" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="7163372766188946" type="Function">
-                            <param id="0" name="Name">&quot;setAttributes&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
+                        <action id="7" name="Play (by name)" sid="685308328362039" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">&quot;jump&quot;</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="2049298380589945">
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3440045408072764" title="Time">
+            <sub-events>
+                <event-block sid="3378187360013773">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="2307892626556414" type="player">
-                            <param id="0" name="Instance variable">mirrored</param>
-                        </condition>
+                        <condition id="-2" name="On start of layout" sid="7484168587982734" type="System" />
                     </conditions>
                     <actions>
-                        <action id="7" name="Set mirrored" sid="7555888997650103" type="player">
-                            <param id="0" name="State">0</param>
+                        <action id="1" name="Time counter" sid="802641280099203" type="TimeManager">
+                            <param id="0" name="Label">&quot;TimeManagerCounter&quot;</param>
+                            <param id="1" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="359138349554718">
+                <event-block sid="6080518775707914">
                     <conditions>
-                        <condition id="-22" name="Else" sid="4507939236292383" type="System" />
+                        <condition id="-1" name="Every tick" sid="2813940341066825" type="System" />
                     </conditions>
                     <actions>
-                        <action id="7" name="Set mirrored" sid="7735751842769747" type="player">
-                            <param id="0" name="State">1</param>
+                        <action id="0" name="Set text" sid="2626357644527631" type="timer">
+                            <param id="0" name="Text">TimeManager.MMSSMM(&quot;TimeManagerCounter&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="4627152093849053">
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="5129140358659669" title="Checkpoints">
+            <sub-events>
+                <event-block any="1" collapsed="1" sid="2939972395318303">
                     <conditions>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="2901772462584443" type="playerCollision" />
+                        <condition id="-4" name="Is outside layout" sid="6542091762023377" type="playerCollision" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="9099400220727602">
+                        <event-block sid="5245047750963103">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="7661778963913551" type="System">
-                                    <param id="0" name="Object">block</param>
+                                <condition id="-8" name="Is boolean instance variable set" sid="9832948166805993" type="checkpoint">
+                                    <param id="0" name="Instance variable">activated</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="2522682448717112" type="playerCollision" />
+                                <action id="0" name="Spawn another object" sid="7144702003871885" type="checkpoint">
+                                    <param id="0" name="Object">playerCollision</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="2358272467109066">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4532110905734723" type="playerCollision">
+                            <param id="0" name="Object">checkpoint</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5023239070360169">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="8512662275441272" type="System">
+                                    <param id="0" name="Object">checkpoint</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="2019592241142641" type="checkpoint">
+                                    <param id="0" name="Instance variable">activated</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="8635157174651265" type="checkpoint">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="196481897311807">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="4892409162639121" type="checkpoint">
+                                    <param id="0" name="Instance variable">activated</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="2097795565436972" type="checkpoint">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="6626069852828811" title="Moving Blocks">
+            <sub-events>
+                <event-block collapsed="1" sid="1442903579666743">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7138763775571413" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9801653275194199">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="1500170502755733" type="System">
+                                    <param id="0" name="Object">movingBlock</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5982523636557385" type="movingBlock">
+                                    <param id="0" name="Instance variable">startX</param>
+                                    <param id="1" name="Value">movingBlock.X</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8345857294897401" type="movingBlock">
+                                    <param id="0" name="Instance variable">startY</param>
+                                    <param id="1" name="Value">movingBlock.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4625968806382102">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="71559570912666" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block collapsed="1" sid="8867362784441558">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="494211110498076" type="System">
+                                    <param id="0" name="Object">movingBlock</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Move forward" sid="2969029545350577" type="movingBlock">
+                                    <param id="0" name="Distance">Self.speed</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="3456498617542693" type="movingBlock">
+                                    <param id="0" name="X">clamp(Self.X, Self.startX, Self.startX + Self.xRange)</param>
+                                    <param id="1" name="Y">clamp(Self.Y, Self.startY, Self.startY + Self.yRange)</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="9550863054094822">
+                                <event-block sid="7894655409352443">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="90482021745397" type="System">
-                                            <param id="0" name="First value">playerCollision.Y - Function.Call(&quot;getJumpHeight&quot;)</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Second value">block.Y + 100</param>
+                                        <condition id="-1" name="Compare X" sid="3438235768843739" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">Self.startX + Self.xRange</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="7133226109342728" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">movingBlock.startY</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="5" name="Set frame" sid="2526390249644538" type="block">
-                                            <param id="0" name="Frame number">0</param>
+                                        <action id="-18" name="Rotate clockwise" sid="1814928561943629" type="movingBlock">
+                                            <param id="0" name="Degrees">90</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="2696893723110222">
+                                <event-block sid="3971108696478698">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="7483222507423478" type="System" />
+                                        <condition id="-1" name="Compare X" sid="7329272677973328" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">Self.startX + Self.xRange</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="2407961673457539" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">Self.startY + Self.yRange</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="5325973792161591" type="movingBlock">
+                                            <param id="0" name="Degrees">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5089248094155357">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="5236935067365922" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">Self.startX</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="9107763673217522" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">Self.startY + Self.yRange</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="9186651655077632" type="movingBlock">
+                                            <param id="0" name="Degrees">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8018561078710794">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="5779592075587186" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">Self.startX</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="8706703560099104" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">Self.startY</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="271456715317331" type="movingBlock">
+                                            <param id="0" name="Degrees">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="4246949128105917" title="PlatformReachability">
+            <sub-events>
+                <event-block collapsed="1" sid="7357490482458985">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="6586554047124558" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block collapsed="1" sid="4627152093849053">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="2901772462584443" type="playerCollision" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9099400220727602">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="7661778963913551" type="System">
+                                            <param id="0" name="Object">block</param>
+                                        </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="3106679968815934">
+                                        <event-block sid="9550863054094822">
                                             <conditions>
-                                                <condition id="-8" name="Compare two values" sid="1316669173515004" type="System">
+                                                <condition id="-8" name="Compare two values" sid="90482021745397" type="System">
                                                     <param id="0" name="First value">playerCollision.Y - Function.Call(&quot;getJumpHeight&quot;)</param>
                                                     <param id="1" name="Comparison">5</param>
                                                     <param id="2" name="Second value">block.Y</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="5" name="Set frame" sid="3544885445406874" type="block">
-                                                    <param id="0" name="Frame number">1</param>
+                                                <action id="5" name="Set frame" sid="2526390249644538" type="block">
+                                                    <param id="0" name="Frame number">0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="9948739392546232">
+                                        <event-block sid="2696893723110222">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="5579487844365583" type="System" />
+                                                <condition id="-22" name="Else" sid="7483222507423478" type="System" />
                                             </conditions>
-                                            <actions>
-                                                <action id="5" name="Set frame" sid="8338701769036658" type="block">
-                                                    <param id="0" name="Frame number">2</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="3106679968815934">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="1316669173515004" type="System">
+                                                            <param id="0" name="First value">playerCollision.Y - Function.Call(&quot;getJumpHeight&quot;)</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Second value">block.Y - 50</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="5" name="Set frame" sid="3544885445406874" type="block">
+                                                            <param id="0" name="Frame number">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="9948739392546232">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="5579487844365583" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="5" name="Set frame" sid="8338701769036658" type="block">
+                                                            <param id="0" name="Frame number">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -146,292 +492,108 @@
                     </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="7639882234768601">
-            <conditions>
-                <condition id="0" name="On function" sid="1121616874284519" type="Function">
-                    <param id="0" name="Name">&quot;setAttributes&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="4" name="Set jump strength" sid="9870427085390514" type="playerCollision">
-                    <param id="0" name="Jump strength">min(playerCollision.maxJumpStrength - abs(playerCollision.Platform.VectorX) + playerCollision.minJumpStrength, playerCollision.maxJumpStrength)</param>
-                </action>
-                <action id="-7" name="Set size" sid="8877415473294466" type="playerCollision">
-                    <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
-                    <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
-                </action>
-                <action id="-7" name="Set size" sid="6224110985978841" type="player">
-                    <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
-                    <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
-                </action>
-                <action id="6" name="Set speed" sid="9715312139101351" type="player">
-                    <param id="0" name="Speed">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 12+ 12</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5636225563831785">
-            <conditions>
-                <condition behavior="Platform" id="0" name="Is moving" sid="502075248275505" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="6292779231067697" type="player">
-                    <param id="0" name="Animation">&quot;walk&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="4934303815682191">
-            <conditions>
-                <condition behavior="Platform" id="3" name="Is jumping" sid="4817051061769987" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="1672869145602346" type="player">
-                    <param id="0" name="Animation">&quot;jump&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="5" name="Set frame" sid="3092304532628403" type="player">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3419440123113753">
-            <conditions>
-                <condition behavior="Platform" id="7" name="On stopped" sid="9895797693342818" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="971596673600614" type="player">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8887687188196776">
-            <conditions>
-                <condition behavior="Platform" id="9" name="On landed" sid="33642831053532" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="7457313928786218" type="player">
-                    <param id="0" name="Animation">&quot;idle&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5390423034203806">
-            <conditions>
-                <condition behavior="Platform" id="4" name="Is falling" sid="3484881688375342" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="9059799385491161" type="player">
-                    <param id="0" name="Animation">&quot;jump&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="5" name="Set frame" sid="4761109853100582" type="player">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3474353154934707">
-            <conditions>
-                <condition id="0" name="On function" sid="6202849901939404" type="Function">
-                    <param id="0" name="Name">&quot;getJumpHeight&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="1" name="Set return value" sid="4174914128221256" type="Function">
-                    <param id="0" name="Value">(-playerCollision.Platform.Gravity/2) * Function.Call(&quot;getJumpTime&quot;) * Function.Call(&quot;getJumpTime&quot;)+playerCollision.Platform.JumpStrength * Function.Call(&quot;getJumpTime&quot;) </param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6089386173129119">
-            <conditions>
-                <condition id="0" name="On function" sid="213923659501686" type="Function">
-                    <param id="0" name="Name">&quot;getJumpTime&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="1" name="Set return value" sid="4405968504388394" type="Function">
-                    <param id="0" name="Value">playerCollision.Platform.JumpStrength / playerCollision.Platform.Gravity</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="7474996103907796">
-            <conditions>
-                <condition behavior="Platform" id="5" name="On jump" sid="2667781297612718" type="playerCollision" />
-            </conditions>
-            <actions>
-                <action id="7" name="Play (by name)" sid="685308328362039" type="Audio">
-                    <param id="0" name="Folder">0</param>
-                    <param id="1" name="Audio file name">&quot;jump&quot;</param>
-                    <param id="3" name="Loop">0</param>
-                    <param id="4" name="Volume">0</param>
-                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="670225060822492">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="9707470323269806" type="Keyboard">
-                    <param id="0" name="Key">38 (Up arrow)</param>
-                </condition>
-                <condition id="6" name="On button pressed" sid="8802957670339218" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="6960449020951888" type="playerCollision">
-                    <param id="0" name="Control">2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="1830522066821311">
-            <conditions>
-                <condition id="2" name="Key is down" sid="4071362224035974" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-                <condition id="3" name="Is button down" sid="5647377975620783" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">15</param>
-                </condition>
-                <condition id="5" name="Compare axis" sid="8245778117210704" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Axis">0</param>
-                    <param id="2" name="Comparison">4</param>
-                    <param id="3" name="Value">5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="3530738163884961" type="playerCollision">
-                    <param id="0" name="Control">1</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="3092411457978059" type="player">
-                    <param id="0" name="Instance variable">mirrored</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="3575013091820103">
-            <conditions>
-                <condition id="2" name="Key is down" sid="8283027482900686" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-                <condition id="3" name="Is button down" sid="7403243923227063" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">14</param>
-                </condition>
-                <condition id="5" name="Compare axis" sid="869366494988214" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Axis">0</param>
-                    <param id="2" name="Comparison">2</param>
-                    <param id="3" name="Value">-5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="4241641027256938" type="playerCollision">
-                    <param id="0" name="Control">0</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="4523226024674515" type="player">
-                    <param id="0" name="Instance variable">mirrored</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="860848635495649">
-            <conditions>
-                <condition id="6" name="On button pressed" sid="2235490433226763" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">8</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-26" name="Restart layout" sid="5125817900040075" type="System" />
-            </actions>
-        </event-block>
-        <event-block sid="8768661852498106">
-            <conditions>
-                <condition id="6" name="On button pressed" sid="6025903427596795" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">9</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="10" name="Request fullscreen" sid="9642870804446828" type="Browser">
-                    <param id="0" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="2939972395318303">
-            <conditions>
-                <condition id="-4" name="Is outside layout" sid="6542091762023377" type="playerCollision" />
-            </conditions>
-            <actions />
+        </event-group>
+        <event-group collapsed="1" description="" sid="3521239612777849" title="SizeChange">
             <sub-events>
-                <event-block sid="5245047750963103">
+                <event-block sid="7639882234768601">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="9832948166805993" type="checkpoint">
-                            <param id="0" name="Instance variable">activated</param>
+                        <condition id="0" name="On function" sid="1121616874284519" type="Function">
+                            <param id="0" name="Name">&quot;setAttributes&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="2522682448717112" type="playerCollision" />
-                        <action id="0" name="Spawn another object" sid="7144702003871885" type="checkpoint">
-                            <param id="0" name="Object">playerCollision</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="9870427085390514" type="playerCollision">
+                            <param id="0" name="Jump strength">min(playerCollision.maxJumpStrength - abs(playerCollision.Platform.VectorX) + playerCollision.minJumpStrength, playerCollision.maxJumpStrength)</param>
+                        </action>
+                        <action disabled="1" id="-7" name="Set size" sid="8877415473294466" type="playerCollision">
+                            <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
+                            <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
+                        </action>
+                        <action disabled="1" id="-7" name="Set size" sid="6224110985978841" type="player">
+                            <param id="0" name="Width">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
+                            <param id="1" name="Height">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 32</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="9715312139101351" type="player">
+                            <param id="0" name="Speed">(abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 12+ 12</param>
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="2358272467109066">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="4532110905734723" type="player">
-                    <param id="0" name="Object">checkpoint</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="5023239070360169">
+                <event-block sid="3474353154934707">
                     <conditions>
-                        <condition id="-19" name="Pick all" sid="8512662275441272" type="System">
-                            <param id="0" name="Object">checkpoint</param>
+                        <condition id="0" name="On function" sid="6202849901939404" type="Function">
+                            <param id="0" name="Name">&quot;getJumpHeight&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="2019592241142641" type="checkpoint">
-                            <param id="0" name="Instance variable">activated</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="8635157174651265" type="checkpoint">
-                            <param id="0" name="Frame number">0</param>
+                        <action id="1" name="Set return value" sid="4174914128221256" type="Function">
+                            <param id="0" name="Value">(-playerCollision.Platform.Gravity/2) * Function.Call(&quot;getJumpTime&quot;) * Function.Call(&quot;getJumpTime&quot;)+playerCollision.Platform.JumpStrength * Function.Call(&quot;getJumpTime&quot;) </param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="196481897311807">
-                    <conditions />
+                <event-block sid="6089386173129119">
+                    <conditions>
+                        <condition id="0" name="On function" sid="213923659501686" type="Function">
+                            <param id="0" name="Name">&quot;getJumpTime&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="4892409162639121" type="checkpoint">
-                            <param id="0" name="Instance variable">activated</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="2097795565436972" type="checkpoint">
-                            <param id="0" name="Frame number">1</param>
+                        <action id="1" name="Set return value" sid="4405968504388394" type="Function">
+                            <param id="0" name="Value">playerCollision.Platform.JumpStrength / playerCollision.Platform.Gravity</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block collapsed="1" sid="6997015358620516">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3034940027277259" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7302077292288723" type="playerCollision">
+                            <param id="0" name="Instance variable">tempHeight</param>
+                            <param id="1" name="Value">(1 - abs(playerCollision.Platform.VectorX) / playerCollision.Platform.MaxSpeed) * 32 + 31</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4272268816681272">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5592553357694367" type="playerCollision">
+                                    <param id="0" name="Instance variable">tempHeight</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">playerCollision.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1186803562066591">
+                                    <conditions>
+                                        <condition id="9" inverted="1" name="Is overlapping at offset" sid="786452599380622" type="playerCollision">
+                                            <param id="0" name="Object">block</param>
+                                            <param id="1" name="Offset X">0</param>
+                                            <param id="2" name="Offset Y">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="4665914688084265" type="Function">
+                                            <param id="0" name="Name">&quot;setAttributes&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9926907770085236">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8260079057744671" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="7163372766188946" type="Function">
+                                    <param id="0" name="Name">&quot;setAttributes&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="3378187360013773">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="7484168587982734" type="System" />
-            </conditions>
-            <actions>
-                <action id="1" name="Time counter" sid="802641280099203" type="TimeManager">
-                    <param id="0" name="Label">&quot;TimeManagerCounter&quot;</param>
-                    <param id="1" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
+        </event-group>
     </events>
 </c2eventsheet>
