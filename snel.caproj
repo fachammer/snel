@@ -48,7 +48,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-type name="block" sid="5638283647469054">
             <plugin id="Sprite" />
             <behaviors>
@@ -64,7 +64,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="player" sid="450083697651212">
+        <object-type name="playerSprite" sid="450083697651212">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="mirrored" sid="4111972647706204" type="boolean" />
@@ -99,7 +99,7 @@
         <object-type name="Keyboard" sid="6611712199142654">
             <plugin id="Keyboard" />
         </object-type>
-        <object-type name="playerCollision" sid="78961444553676">
+        <object-type name="player" sid="78961444553676">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="minJumpStrength" sid="5032470670675822" type="number" />
@@ -148,8 +148,8 @@
                 <instance-variable comment="If the checkpoint is activated." name="activated" sid="354740541255391" type="boolean" />
             </instance-variables>
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4243452338858076" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4243452338858076" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="1">
                         <collision-poly>
                             <point x="0" y="0.25" />
                             <point x="0.445313" y="0.015625" />
@@ -158,7 +158,6 @@
                             <point x="0" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -169,7 +168,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3935749085610554" speed="5">
-                    <frame duration="1" hotspotX="-0.584" hotspotY="0.508" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -208,6 +207,14 @@
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9925918487784268" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="deathZone" sid="964575553351072">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4089433063945016" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
                 </animation>
             </animation-folder>
         </object-type>
