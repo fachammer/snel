@@ -129,7 +129,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5129140358659669" title="Checkpoints">
+        <event-group collapsed="1" description="" sid="5129140358659669" title="Checkpoints">
             <sub-events>
                 <event-block any="1" sid="2939972395318303">
                     <conditions>
@@ -203,7 +203,7 @@
         </event-group>
         <event-group collapsed="1" description="" sid="6626069852828811" title="Moving Blocks">
             <sub-events>
-                <event-block collapsed="1" sid="1442903579666743">
+                <event-block sid="1442903579666743">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="7138763775571413" type="System" />
                     </conditions>
@@ -218,11 +218,11 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="5982523636557385" type="movingBlock">
                                     <param id="0" name="Instance variable">startX</param>
-                                    <param id="1" name="Value">movingBlock.X</param>
+                                    <param id="1" name="Value">Self.X</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="8345857294897401" type="movingBlock">
                                     <param id="0" name="Instance variable">startY</param>
-                                    <param id="1" name="Value">movingBlock.Y</param>
+                                    <param id="1" name="Value">Self.Y</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -234,38 +234,71 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block collapsed="1" sid="8867362784441558">
+                        <event-block sid="8867362784441558">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="494211110498076" type="System">
                                     <param id="0" name="Object">movingBlock</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-17" name="Move forward" sid="2969029545350577" type="movingBlock">
-                                    <param id="0" name="Distance">Self.speed</param>
-                                </action>
                                 <action id="-3" name="Set position" sid="3456498617542693" type="movingBlock">
                                     <param id="0" name="X">clamp(Self.X, Self.startX, Self.startX + Self.xRange)</param>
                                     <param id="1" name="Y">clamp(Self.Y, Self.startY, Self.startY + Self.yRange)</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="7894655409352443">
+                                <event-block sid="8018561078710794">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="3438235768843739" type="movingBlock">
+                                        <condition id="-1" name="Compare X" sid="5779592075587186" type="movingBlock">
                                             <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="X co-ordinate">Self.startX + Self.xRange</param>
+                                            <param id="1" name="X co-ordinate">Self.startX</param>
                                         </condition>
-                                        <condition id="-2" name="Compare Y" sid="7133226109342728" type="movingBlock">
+                                        <condition id="-2" name="Compare Y" sid="8706703560099104" type="movingBlock">
                                             <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Y co-ordinate">movingBlock.startY</param>
+                                            <param id="1" name="Y co-ordinate">Self.startY</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-18" name="Rotate clockwise" sid="1814928561943629" type="movingBlock">
-                                            <param id="0" name="Degrees">90</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="9856185290637017">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="15235103847428" type="movingBlock">
+                                                    <param id="0" name="Instance variable">clockwise</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="6774524655206536" type="movingBlock">
+                                                    <param id="0" name="Instance variable">xRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="719143962942739" type="movingBlock">
+                                                    <param id="0" name="Vector X">Self.speed</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="178447725406007" type="movingBlock">
+                                                    <param id="0" name="Vector Y">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8067714703353819">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="6093363535858585" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="6341971889472965" type="movingBlock">
+                                                    <param id="0" name="Instance variable">yRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="1556168553842842" type="movingBlock">
+                                                    <param id="0" name="Vector X">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="3554365591835138" type="movingBlock">
+                                                    <param id="0" name="Vector Y">Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="3971108696478698">
                                     <conditions>
@@ -278,11 +311,100 @@
                                             <param id="1" name="Y co-ordinate">Self.startY + Self.yRange</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-18" name="Rotate clockwise" sid="5325973792161591" type="movingBlock">
-                                            <param id="0" name="Degrees">90</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6184000896166958">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2758591336278906" type="movingBlock">
+                                                    <param id="0" name="Instance variable">xRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="1704415669070372" type="movingBlock">
+                                                    <param id="0" name="Instance variable">clockwise</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="8401925911863595" type="movingBlock">
+                                                    <param id="0" name="Vector X">-Self.speed</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="9718255333541474" type="movingBlock">
+                                                    <param id="0" name="Vector Y">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3905530698264283">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9172656867739889" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="756539641866732" type="movingBlock">
+                                                    <param id="0" name="Instance variable">yRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="259177524642265" type="movingBlock">
+                                                    <param id="0" name="Vector X">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="6181967167358766" type="movingBlock">
+                                                    <param id="0" name="Vector Y">-Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7894655409352443">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="3438235768843739" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">Self.startX + Self.xRange</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="7133226109342728" type="movingBlock">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">movingBlock.startY</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="9873598410263291">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="8198677628752471" type="movingBlock">
+                                                    <param id="0" name="Instance variable">clockwise</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="6420353008914713" type="movingBlock">
+                                                    <param id="0" name="Instance variable">yRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="1814928561943629" type="movingBlock">
+                                                    <param id="0" name="Vector X">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="4648445886297633" type="movingBlock">
+                                                    <param id="0" name="Vector Y">Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4249284653226519">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="4924630138230232" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="5306563890872577" type="movingBlock">
+                                                    <param id="0" name="Instance variable">xRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="2696218128925146" type="movingBlock">
+                                                    <param id="0" name="Vector X">-Self.speed</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="8213470622366498" type="movingBlock">
+                                                    <param id="0" name="Vector Y">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="5089248094155357">
                                     <conditions>
@@ -295,28 +417,47 @@
                                             <param id="1" name="Y co-ordinate">Self.startY + Self.yRange</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-18" name="Rotate clockwise" sid="9186651655077632" type="movingBlock">
-                                            <param id="0" name="Degrees">90</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="8018561078710794">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="5779592075587186" type="movingBlock">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="X co-ordinate">Self.startX</param>
-                                        </condition>
-                                        <condition id="-2" name="Compare Y" sid="8706703560099104" type="movingBlock">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Y co-ordinate">Self.startY</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-18" name="Rotate clockwise" sid="271456715317331" type="movingBlock">
-                                            <param id="0" name="Degrees">90</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="7504172953251707">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5925940012756195" type="movingBlock">
+                                                    <param id="0" name="Instance variable">yRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="6926072388692761" type="movingBlock">
+                                                    <param id="0" name="Instance variable">clockwise</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="9032839622210392" type="movingBlock">
+                                                    <param id="0" name="Vector X">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="6881523350364505" type="movingBlock">
+                                                    <param id="0" name="Vector Y">-Self.speed</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1396931480470163">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="7873938971459906" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="592420745330499" type="movingBlock">
+                                                    <param id="0" name="Instance variable">xRange</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="492502022697295" type="movingBlock">
+                                                    <param id="0" name="Vector X">Self.speed</param>
+                                                </action>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="5732465392001061" type="movingBlock">
+                                                    <param id="0" name="Vector Y">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -324,7 +465,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4246949128105917" title="PlatformReachability">
+        <event-group description="" sid="4246949128105917" title="PlatformReachability">
             <sub-events>
                 <event-block sid="4627152093849053">
                     <conditions>
@@ -389,12 +530,6 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="7357490482458985">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="6586554047124558" type="System" />
-                    </conditions>
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
@@ -500,7 +635,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1190127142046084" title="Animation">
+        <event-group collapsed="1" description="" sid="1190127142046084" title="Animation">
             <sub-events>
                 <event-block sid="9227411981907347">
                     <conditions>
@@ -601,6 +736,23 @@
                         <action id="5" name="Set web font" sid="5310692265821974" type="timer">
                             <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
                             <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="6721383787237065" title="Goal">
+            <sub-events>
+                <event-block sid="2495540835372937">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="643821739223539" type="player">
+                            <param id="0" name="Object">goal</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Pause counter" sid="7338341115658596" type="TimeManager">
+                            <param id="0" name="Label">&quot;TimeManagerCounter&quot;</param>
+                            <param id="1" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>

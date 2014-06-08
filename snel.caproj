@@ -198,10 +198,14 @@
                 <instance-variable name="speed" sid="4120363203415316" type="number" />
                 <instance-variable name="startX" sid="8087006408025306" type="number" />
                 <instance-variable name="startY" sid="2804662181402991" type="number" />
+                <instance-variable name="clockwise" sid="9200788704930968" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="8893487259798725">
                     <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="5413812980394192">
+                    <behavior id="Platform" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -215,6 +219,14 @@
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4089433063945016" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="goal" sid="9992313874144149">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3093641990036182" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
