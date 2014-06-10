@@ -467,9 +467,14 @@
         </event-group>
         <event-group description="" sid="4246949128105917" title="PlatformReachability">
             <sub-events>
-                <event-block sid="4627152093849053">
+                <event-block any="1" sid="4627152093849053">
                     <conditions>
                         <condition behavior="Platform" id="2" name="Is on floor" sid="2901772462584443" type="player" />
+                        <condition id="9" name="Is overlapping at offset" sid="6646291120598096" type="player">
+                            <param id="0" name="Object">movingBlock</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">3</param>
+                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -545,13 +550,13 @@
                         <action behavior="Platform" id="4" name="Set jump strength" sid="9870427085390514" type="player">
                             <param id="0" name="Jump strength">min(player.maxJumpStrength - abs(player.Platform.VectorX) + player.minJumpStrength, player.maxJumpStrength)</param>
                         </action>
-                        <action disabled="1" id="-7" name="Set size" sid="8877415473294466" type="player">
-                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 32+ 31</param>
-                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 31</param>
+                        <action id="-7" name="Set size" sid="8877415473294466" type="player">
+                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16+ 15</param>
+                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 15</param>
                         </action>
-                        <action disabled="1" id="-7" name="Set size" sid="6224110985978841" type="playerSprite">
-                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 32 + 32</param>
-                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 32</param>
+                        <action id="-7" name="Set size" sid="6224110985978841" type="playerSprite">
+                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 16</param>
+                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 +16</param>
                         </action>
                         <action id="6" name="Set speed" sid="9715312139101351" type="playerSprite">
                             <param id="0" name="Speed">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 12+ 12</param>
