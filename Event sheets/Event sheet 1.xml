@@ -465,7 +465,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4246949128105917" title="PlatformReachability">
+        <event-group collapsed="1" description="" sid="4246949128105917" title="PlatformReachability">
             <sub-events>
                 <event-block any="1" sid="4627152093849053">
                     <conditions>
@@ -538,7 +538,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3521239612777849" title="Size and Jump Change">
+        <event-group description="" sid="3521239612777849" title="Size and Jump Change">
             <sub-events>
                 <event-block sid="7639882234768601">
                     <conditions>
@@ -551,12 +551,12 @@
                             <param id="0" name="Jump strength">min(player.maxJumpStrength - abs(player.Platform.VectorX) + player.minJumpStrength, player.maxJumpStrength)</param>
                         </action>
                         <action id="-7" name="Set size" sid="8877415473294466" type="player">
-                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16+ 15</param>
-                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 15</param>
+                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * (player.maxWidth / 2) + player.maxWidth / 2 - 1</param>
+                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * (player.maxHeight / 2) + player.maxHeight / 2 - 1</param>
                         </action>
                         <action id="-7" name="Set size" sid="6224110985978841" type="playerSprite">
-                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 + 16</param>
-                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 16 +16</param>
+                            <param id="0" name="Width">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) *  (player.maxWidth / 2) + player.maxWidth / 2</param>
+                            <param id="1" name="Height">(1 - abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * (player.maxHeight / 2) + player.maxHeight / 2</param>
                         </action>
                         <action id="6" name="Set speed" sid="9715312139101351" type="playerSprite">
                             <param id="0" name="Speed">(abs(player.Platform.VectorX) / player.Platform.MaxSpeed) * 12+ 12</param>

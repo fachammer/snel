@@ -129,6 +129,8 @@
                         <minJumpStrength>300</minJumpStrength>
                         <maxJumpStrength>950</maxJumpStrength>
                         <tempHeight>0</tempHeight>
+                        <maxHeight>40</maxHeight>
+                        <maxWidth>48</maxWidth>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
