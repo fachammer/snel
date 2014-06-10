@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 2</name>
+    <name>Game</name>
     <sid>3305670459485142</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
@@ -871,6 +871,7 @@
                         <tempHeight>0</tempHeight>
                         <maxHeight>40</maxHeight>
                         <maxWidth>48</maxWidth>
+                        <name>&quot;Player&quot;</name>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2045,7 +2046,7 @@
                         <x>13407.5</x>
                         <y>3072</y>
                         <z>0</z>
-                        <width>320</width>
+                        <width>336</width>
                         <height>1280</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2133,6 +2134,140 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="HighScoreBg" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>14480</x>
+                        <y>1552</y>
+                        <z>0</z>
+                        <width>1472</width>
+                        <height>3120</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="HighScoreLabel" uid="7">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Times New Roman,-29,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <counter>1</counter>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13776</x>
+                        <y>1664</y>
+                        <z>0</z>
+                        <width>336</width>
+                        <height>496</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ScoreLabel" uid="8">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Times New Roman,-29,700,0</font>
+                        <color>255,255,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13776</x>
+                        <y>1600</y>
+                        <z>0</z>
+                        <width>336</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Restart" uid="11">
+                    <properties>
+                        <type>Button</type>
+                        <text>Restart</text>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>No</checked>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>14240</x>
+                        <y>1472</y>
+                        <z>0</z>
+                        <width>72</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="Menu" uid="12">
+                    <properties>
+                        <type>Button</type>
+                        <text>Menu</text>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>No</checked>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>14240</x>
+                        <y>1616</y>
+                        <z>0</z>
+                        <width>72</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -2168,7 +2303,7 @@
                         <x>128</x>
                         <y>32</y>
                         <z>0</z>
-                        <width>200</width>
+                        <width>500</width>
                         <height>30</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2195,8 +2330,8 @@
                         <x>288</x>
                         <y>32</y>
                         <z>0</z>
-                        <width>200</width>
-                        <height>30</height>
+                        <width>1000</width>
+                        <height>500</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -2208,6 +2343,8 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="highScores" uid="5" />
+    </nonworld-instances>
     <effects />
 </c2layout>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuEvents</name>
+    <events>
+        <event-block sid="6380633105893875">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3753359814928375" type="Start" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="1592792885606933" type="WebStorage">
+                    <param id="0" name="Key">&quot;name&quot;</param>
+                    <param id="1" name="Value">name.Text</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="4935150819399829" type="System">
+                    <param id="0" name="Layout">&quot;Game&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6416978921343149">
+            <conditions>
+                <condition id="0" name="On clicked" sid="1091343174752662" type="Reset" />
+            </conditions>
+            <actions>
+                <action id="4" name="Clear local storage" sid="4520068616336386" type="WebStorage" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

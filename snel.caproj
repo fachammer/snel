@@ -12,12 +12,17 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Mikael Nilsson" id="CAMFTimeManager" version="1.100000024">Time Manager</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
@@ -107,6 +112,7 @@
                 <instance-variable comment="Temporary height storage." name="tempHeight" sid="2533110941361441" type="number" />
                 <instance-variable name="maxHeight" sid="9848318803211153" type="number" />
                 <instance-variable name="maxWidth" sid="632202105542852" type="number" />
+                <instance-variable name="name" sid="5449296802180373" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="7702235767688374">
@@ -232,14 +238,61 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="WebStorage" sid="4838123053008222">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="Start" sid="8120642368001951">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Reset" sid="8762336223380308">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Name" sid="1500049018409889">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type global="1" name="highScores" sid="6821479411088323">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="HighScoreBg" sid="5480168634189037">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="328281552931609">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="187737175934462" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HighScoreLabel" sid="9984290464240711">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="counter" sid="2364445026672158" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="ScoreLabel" sid="2774907397179166">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Restart" sid="8653163679528047">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Menu" sid="4579905207694077">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="List" sid="9637343926553439">
+            <plugin id="List" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
-        <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
+        <layout>Menu.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>MenuEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
@@ -266,6 +319,7 @@
         </global-instance>
         <global-instance type="Browser" uid="15" />
         <global-instance type="TimeManager" uid="24" />
+        <global-instance type="WebStorage" uid="103" />
     </global-instances>
     <sounds-folder expanded="1">
         <file name="jump.ogg" />
