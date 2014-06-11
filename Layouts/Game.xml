@@ -3244,6 +3244,13 @@
     </layers>
     <nonworld-instances>
         <instance type="highScores" uid="5" />
+        <instance type="scores" uid="13">
+            <properties>
+                <width>5</width>
+                <height>2</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
     </nonworld-instances>
     <effects />
 </c2layout>

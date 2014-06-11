@@ -10,6 +10,7 @@
     <unique-id>nc665xx84h8e</unique-id>
     <saved-with-version>16300</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
@@ -283,6 +284,9 @@
         </object-type>
         <object-type name="List" sid="9637343926553439">
             <plugin id="List" />
+        </object-type>
+        <object-type global="1" name="scores" sid="9350473566961537">
+            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families />

@@ -119,7 +119,10 @@
                             <param id="0" name="Instance variable">name</param>
                             <param id="1" name="Value">WebStorage.LocalValue(&quot;name&quot;)</param>
                         </action>
-                        <action id="4" name="Load" sid="7800046791702628" type="highScores">
+                        <action disabled="1" id="4" name="Load" sid="7800046791702628" type="highScores">
+                            <param id="0" name="JSON">&quot;scores&quot;</param>
+                        </action>
+                        <action id="11" name="Load" sid="7027408434851499" type="scores">
                             <param id="0" name="JSON">&quot;scores&quot;</param>
                         </action>
                     </actions>
