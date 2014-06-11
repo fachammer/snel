@@ -115,11 +115,7 @@
                             <param id="0" name="Label">&quot;TimeManagerCounter&quot;</param>
                             <param id="1" name="State">0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="3674474605919692" type="player">
-                            <param id="0" name="Instance variable">name</param>
-                            <param id="1" name="Value">WebStorage.LocalValue(&quot;name&quot;)</param>
-                        </action>
-                        <action id="4" name="Load" sid="7800046791702628" type="highScores">
+                        <action id="11" name="Load" sid="7737852461321832" type="scores">
                             <param id="0" name="JSON">&quot;scores&quot;</param>
                         </action>
                     </actions>
@@ -738,7 +734,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="659353097191979" title="Font">
+        <event-group description="" sid="659353097191979" title="Font">
             <sub-events>
                 <event-block sid="4333950098766232">
                     <conditions>
@@ -746,6 +742,14 @@
                     </conditions>
                     <actions>
                         <action id="5" name="Set web font" sid="5310692265821974" type="timer">
+                            <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                            <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="7159235691908247" type="HighScoreLabel">
+                            <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                            <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="9237129394893035" type="ScoreLabel">
                             <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
                             <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
                         </action>
@@ -769,82 +773,76 @@
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="6660765107797638" type="player">
                             <param id="0" name="Input">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="8571057559018651" type="ScoreLabel">
-                            <param id="0" name="Text">player.name &amp; &quot;  &quot; &amp; int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                        <action id="5" name="Push" sid="2811713827353008" type="scores">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="8" name="Sort" sid="6727307345991953" type="scores">
+                            <param id="0" name="Axis">0</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="4209619596685137">
+                        <event-block sid="458406289584338">
                             <conditions>
-                                <condition id="3" name="Has key" sid="6423018412605821" type="highScores">
-                                    <param id="0" name="Key">player.name</param>
+                                <condition id="7" name="Compare size" sid="3330257547847732" type="scores">
+                                    <param id="0" name="Axis">0</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">15</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1735945813236559">
-                                    <conditions>
-                                        <condition id="0" name="Compare value" sid="2699009595282769" type="highScores">
-                                            <param id="0" name="Key">player.name</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Add key" sid="55806851194337" type="highScores">
-                                            <param id="0" name="Key">player.name</param>
-                                            <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="5389402604133663">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="9563029803181673" type="System" />
-                            </conditions>
                             <actions>
-                                <action id="0" name="Add key" sid="929272316750855" type="highScores">
-                                    <param id="0" name="Key">player.name</param>
-                                    <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                <action id="6" name="Pop" sid="6518957779637095" type="scores">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Axis">0</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="4021315314594489">
+                        <event-block sid="6814277499639711">
                             <conditions />
                             <actions>
                                 <action id="0" name="Set local value" sid="9132713016960385" type="WebStorage">
                                     <param id="0" name="Key">&quot;scores&quot;</param>
-                                    <param id="1" name="Value">highScores.AsJSON</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="2622872369700164" type="HighScoreLabel">
-                                    <param id="0" name="Instance variable">counter</param>
-                                    <param id="1" name="Value">1</param>
+                                    <param id="1" name="Value">scores.AsJSON</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="1124921082932729">
+                        <event-block sid="3873470321598869">
                             <conditions>
-                                <condition id="1" name="For each key" sid="5803161364279942" type="highScores" />
+                                <condition id="3" name="For each element" sid="8180323314866425" type="scores">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="1" name="Append text" sid="6122159883347868" type="HighScoreLabel">
-                                    <param id="0" name="Text">HighScoreLabel.counter &amp; &quot;. &quot; &amp;highScores.CurrentKey &amp; &quot; &quot; &amp; highScores.CurrentValue &amp; newline</param>
-                                </action>
-                                <action id="-11" name="Add to" sid="1779274887823301" type="HighScoreLabel">
-                                    <param id="0" name="Instance variable">counter</param>
-                                    <param id="1" name="Value">1</param>
+                                <action id="1" name="Append text" sid="2312911813052209" type="HighScoreLabel">
+                                    <param id="0" name="Text">(scores.CurX &lt; 10 ? &quot; &quot; : &quot;&quot;) &amp; scores.CurX+1 &amp; &quot;. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(scores.CurValue) &amp; newline</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="9471050491046292">
+                                    <conditions>
+                                        <condition id="4" name="Compare current value" sid="2832786206940579" type="scores">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="3977290636992325" type="ScoreLabel">
+                                            <param id="0" name="Y">ScoreLabel.Y + (ScoreLabel.Height/2 * scores.CurX) + (2 * scores.CurX)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="8571057559018651" type="ScoreLabel">
+                                            <param id="0" name="Text">(scores.CurX &lt; 10 ? &quot; &quot; : &quot;&quot;) &amp; scores.CurX+1 &amp; &quot;. &quot; &amp;TimeManager.MMSSMM(&quot;TimeManagerCounter&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
         <event-block sid="2099048774098773">
-            <conditions>
-                <condition id="0" name="On clicked" sid="2280532528982555" type="Menu" />
-            </conditions>
+            <conditions />
             <actions>
                 <action id="-25" name="Go to layout (by name)" sid="3798806699629524" type="System">
                     <param id="0" name="Layout">&quot;Menu&quot;</param>
