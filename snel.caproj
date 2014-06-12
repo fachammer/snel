@@ -26,6 +26,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -111,6 +112,7 @@
                 <instance-variable comment="Temporary height storage." name="tempHeight" sid="2533110941361441" type="number" />
                 <instance-variable name="maxHeight" sid="9848318803211153" type="number" />
                 <instance-variable name="maxWidth" sid="632202105542852" type="number" />
+                <instance-variable name="finished" sid="6146605426162402" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="7702235767688374">
@@ -252,10 +254,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="HighScoreLabel" sid="9984290464240711">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="ScoreLabel" sid="2774907397179166">
+        <object-type name="Score1Label" sid="9984290464240711">
             <plugin id="Text" />
         </object-type>
         <object-type name="Restart" sid="8653163679528047">
@@ -266,6 +265,31 @@
         </object-type>
         <object-type global="1" name="scores" sid="4437247198325376">
             <plugin id="Arr" />
+        </object-type>
+        <object-type name="YourScoreLabel" sid="9331923563488543">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score2Label" sid="7403685354549531">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score3Label" sid="3470077984422164">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="movingPlatform" sid="3856941158310805">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1760808730180724">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="5338529318295136">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7493524250346272" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

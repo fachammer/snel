@@ -1487,6 +1487,7 @@
                         <tempHeight>0</tempHeight>
                         <maxHeight>40</maxHeight>
                         <maxWidth>48</maxWidth>
+                        <finished>false</finished>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1510,8 +1511,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
-                        <y>2832</y>
+                        <x>144</x>
+                        <y>2864</y>
                         <z>0</z>
                         <width>30</width>
                         <height>32</height>
@@ -2392,8 +2393,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>13104</x>
-                        <y>2144</y>
+                        <x>12864</x>
+                        <y>2672</y>
                         <z>0</z>
                         <width>32</width>
                         <height>64</height>
@@ -2571,8 +2572,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>14112</x>
-                        <y>2464</y>
+                        <x>14128</x>
+                        <y>3168</y>
                         <z>0</z>
                         <width>702</width>
                         <height>992</height>
@@ -2720,11 +2721,11 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="HighScoreLabel" uid="7">
+                <instance type="Score1Label" uid="7">
                     <properties>
                         <text></text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Times New Roman,-29,400,0</font>
+                        <font>Times New Roman,-35,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -2735,35 +2736,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>16800</x>
-                        <y>1560</y>
-                        <z>0</z>
-                        <width>500</width>
-                        <height>500</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="ScoreLabel" uid="8">
-                    <properties>
-                        <text></text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Times New Roman,-29,700,0</font>
-                        <color>255,255,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>16800</x>
-                        <y>1560</y>
+                        <x>16848</x>
+                        <y>1632</y>
                         <z>0</z>
                         <width>500</width>
                         <height>64</height>
@@ -2777,7 +2751,7 @@
                 <instance type="Restart" uid="11">
                     <properties>
                         <type>Button</type>
-                        <text>Restart</text>
+                        <text>[R]estart</text>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -2788,11 +2762,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>17248</x>
-                        <y>1504</y>
+                        <x>16992</x>
+                        <y>1920</y>
                         <z>0</z>
-                        <width>176</width>
-                        <height>48</height>
+                        <width>200</width>
+                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -3135,6 +3109,171 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="YourScoreLabel" uid="0">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Times New Roman,-27,400,0</font>
+                        <color>255,255,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>16848</x>
+                        <y>1520</y>
+                        <z>0</z>
+                        <width>500</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Score2Label" uid="1">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Times New Roman,-29,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>16848</x>
+                        <y>1728</y>
+                        <z>0</z>
+                        <width>500</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Score3Label" uid="3">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Times New Roman,-29,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>16848</x>
+                        <y>1792</y>
+                        <z>0</z>
+                        <width>500</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="movingPlatform" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>4</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>100</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13120</x>
+                        <y>2176</y>
+                        <z>0</z>
+                        <width>80</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="movingPlatform" uid="8">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>4</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>100</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>14112</x>
+                        <y>2432</y>
+                        <z>0</z>
+                        <width>701</width>
+                        <height>960</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

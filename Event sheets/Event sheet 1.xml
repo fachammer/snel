@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-group collapsed="1" description="" sid="8319577293192605" title="Controls">
+        <event-group description="" sid="8319577293192605" title="Controls">
             <sub-events>
                 <event-block any="1" sid="670225060822492">
                     <conditions>
@@ -21,16 +21,40 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="860848635495649">
+                <event-block any="1" sid="860848635495649">
                     <conditions>
+                        <condition id="2" name="Key is down" sid="3344169817362079" type="Keyboard">
+                            <param id="0" name="Key">82 (R)</param>
+                        </condition>
                         <condition id="6" name="On button pressed" sid="2235490433226763" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">8</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-26" name="Restart layout" sid="5125817900040075" type="System" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1801206617753106">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="6453055474890662" type="player">
+                                    <param id="0" name="Instance variable">finished</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-26" name="Restart layout" sid="2016813411673971" type="System" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="3237399842341675">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7970067294556443" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2261911425885496" type="Function">
+                                    <param id="0" name="Name">&quot;RespawnAtCheckpoint&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block any="1" sid="1830522066821311">
                     <conditions>
@@ -104,7 +128,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="3440045408072764" title="Time">
+        <event-group collapsed="1" description="" sid="3440045408072764" title="Time">
             <sub-events>
                 <event-block sid="3378187360013773">
                     <conditions>
@@ -141,28 +165,12 @@
                             <param id="0" name="Object">deathZone</param>
                         </condition>
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="5245047750963103">
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="9832948166805993" type="checkpoint">
-                                    <param id="0" name="Instance variable">activated</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-4" name="Set position to another object" sid="193271568612946" type="player">
-                                    <param id="0" name="Object">checkpoint</param>
-                                    <param id="1" name="Image point (optional)">0</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="3308225732667058" type="player">
-                                    <param id="0" name="Vector X">0</param>
-                                </action>
-                                <action behavior="Platform" id="9" name="Set vector Y" sid="658921528804031" type="player">
-                                    <param id="0" name="Vector Y">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action id="0" name="Call function" sid="8820447700157416" type="Function">
+                            <param id="0" name="Name">&quot;RespawnAtCheckpoint&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="2358272467109066">
                     <conditions>
@@ -197,6 +205,35 @@
                                 </action>
                                 <action id="5" name="Set frame" sid="2097795565436972" type="checkpoint">
                                     <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9501865733306384">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1919299159935462" type="Function">
+                            <param id="0" name="Name">&quot;RespawnAtCheckpoint&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5245047750963103">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="9832948166805993" type="checkpoint">
+                                    <param id="0" name="Instance variable">activated</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="193271568612946" type="player">
+                                    <param id="0" name="Object">checkpoint</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="3308225732667058" type="player">
+                                    <param id="0" name="Vector X">0</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="658921528804031" type="player">
+                                    <param id="0" name="Vector Y">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -476,7 +513,7 @@
                         <condition id="9" name="Is overlapping at offset" sid="6646291120598096" type="player">
                             <param id="0" name="Object">movingBlock</param>
                             <param id="1" name="Offset X">0</param>
-                            <param id="2" name="Offset Y">3</param>
+                            <param id="2" name="Offset Y">5</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -734,7 +771,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="659353097191979" title="Font">
+        <event-group collapsed="1" description="" sid="659353097191979" title="Font">
             <sub-events>
                 <event-block sid="4333950098766232">
                     <conditions>
@@ -745,11 +782,19 @@
                             <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
                             <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
                         </action>
-                        <action id="5" name="Set web font" sid="7159235691908247" type="HighScoreLabel">
+                        <action id="5" name="Set web font" sid="7159235691908247" type="Score1Label">
                             <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
                             <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
                         </action>
-                        <action id="5" name="Set web font" sid="9237129394893035" type="ScoreLabel">
+                        <action id="5" name="Set web font" sid="5127513333633212" type="Score2Label">
+                            <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                            <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="5754289425642965" type="Score3Label">
+                            <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                            <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="9545193748740829" type="YourScoreLabel">
                             <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
                             <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
                         </action>
@@ -773,6 +818,13 @@
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="6660765107797638" type="player">
                             <param id="0" name="Input">1</param>
                         </action>
+                        <action id="-13" name="Set boolean" sid="241140490634872" type="player">
+                            <param id="0" name="Instance variable">finished</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6673339212088066" type="YourScoreLabel">
+                            <param id="0" name="Text">&quot;You: &quot; &amp; TimeManager.ConvertNumberToMMSSMM(Timemanager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                        </action>
                         <action id="5" name="Push" sid="2811713827353008" type="scores">
                             <param id="0" name="Where">0</param>
                             <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
@@ -788,7 +840,7 @@
                                 <condition id="7" name="Compare size" sid="3330257547847732" type="scores">
                                     <param id="0" name="Axis">0</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">15</param>
+                                    <param id="2" name="Value">3</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -805,33 +857,78 @@
                                     <param id="0" name="Key">&quot;scores&quot;</param>
                                     <param id="1" name="Value">scores.AsJSON</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="3873470321598869">
-                            <conditions>
-                                <condition id="3" name="For each element" sid="8180323314866425" type="scores">
-                                    <param id="0" name="Axes">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Append text" sid="2312911813052209" type="HighScoreLabel">
-                                    <param id="0" name="Text">(scores.CurX &lt; 10 ? &quot; &quot; : &quot;&quot;) &amp; scores.CurX+1 &amp; &quot;. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(scores.CurValue) &amp; newline</param>
+                                <action id="0" name="Set text" sid="513133104154045" type="Score1Label">
+                                    <param id="0" name="Text">(scores.At(0) &gt; 0 ? &quot;1. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(scores.At(0)) : &quot;1. --:--:--&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="2889215982721639" type="Score2Label">
+                                    <param id="0" name="Text">(scores.At(1) &gt; 0 ? &quot;2. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(scores.At(1)) : &quot;2. --:--:--&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5913871359908244" type="Score3Label">
+                                    <param id="0" name="Text">(scores.At(2) &gt; 0 ? &quot;3. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(scores.At(2)) : &quot;3. --:--:--&quot;)</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="9471050491046292">
+                                <variable constant="0" name="FirstPlace" sid="3314376973725367" static="0" type="number">0</variable>
+                                <variable constant="0" name="SecondPlace" sid="6307021666362645" static="0" type="number">0</variable>
+                                <event-block sid="1336979514079427">
                                     <conditions>
-                                        <condition id="4" name="Compare current value" sid="2832786206940579" type="scores">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Value">int(TimeManager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                        <condition id="0" name="Compare text" sid="9210990095310712" type="Score1Label">
+                                            <param id="0" name="Text to compare">&quot;1. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(Timemanager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                            <param id="1" name="Case sensitivity">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-2" name="Set Y" sid="3977290636992325" type="ScoreLabel">
-                                            <param id="0" name="Y">ScoreLabel.Y + (ScoreLabel.Height/2 * scores.CurX) + (2 * scores.CurX)</param>
+                                        <action id="4" name="Set font color" sid="2528928584932483" type="Score1Label">
+                                            <param id="0" name="Color">rgb(255, 255, 0)</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="8571057559018651" type="ScoreLabel">
-                                            <param id="0" name="Text">(scores.CurX &lt; 10 ? &quot; &quot; : &quot;&quot;) &amp; scores.CurX+1 &amp; &quot;. &quot; &amp;TimeManager.MMSSMM(&quot;TimeManagerCounter&quot;)</param>
+                                        <action id="-9" name="Set value" sid="9807112480491835" type="System">
+                                            <param id="0" name="Variable">FirstPlace</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="619995423786645">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="5049989515607331" type="Score2Label">
+                                            <param id="0" name="Text to compare">&quot;2. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(Timemanager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7223850146622846" type="System">
+                                            <param id="0" name="Variable">FirstPlace</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="3146204935371327" type="Score2Label">
+                                            <param id="0" name="Color">rgb(255, 255, 0)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9862886787063132" type="System">
+                                            <param id="0" name="Variable">SecondPlace</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1616374003568023">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="3763175014793167" type="Score3Label">
+                                            <param id="0" name="Text to compare">&quot;3. &quot; &amp; TimeManager.ConvertNumberToMMSSMM(Timemanager.GetTimeValue(&quot;TimeManagerCounter&quot;))</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="2540779729651192" type="System">
+                                            <param id="0" name="Variable">FirstPlace</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="3895660272959877" type="System">
+                                            <param id="0" name="Variable">SecondPlace</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="9334773377576871" type="Score3Label">
+                                            <param id="0" name="Color">rgb(255, 255, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -841,14 +938,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="2099048774098773">
-            <conditions />
-            <actions>
-                <action id="-25" name="Go to layout (by name)" sid="3798806699629524" type="System">
-                    <param id="0" name="Layout">&quot;Menu&quot;</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="6464160871185527">
             <conditions>
                 <condition id="0" name="On clicked" sid="9728826853214856" type="Restart" />

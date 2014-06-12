@@ -1,10 +1,15 @@
 - make different paths better identifiable
+
 - indicate optimal time for jump
+
 - better indicate whether a platform can be reached
+
 - fix color change at first jump
+
 - Secrets
-- Button for respawning
+
 - more sound effects
+
 - change colors of moving blocks
-- show 3 highscores + own score
+
 - make part of level after big jump easier
