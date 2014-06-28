@@ -52,7 +52,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-type name="block" sid="5638283647469054">
             <plugin id="Sprite" />
             <behaviors>
@@ -277,13 +277,11 @@
         <global-instance type="WebStorage" uid="103" />
         <global-instance type="Mouse" uid="86" />
     </global-instances>
-    <sounds-folder expanded="0">
+    <sounds-folder expanded="1">
         <file name="jump.ogg" />
         <file name="jump.wav" />
         <file name="walk.ogg" />
         <file name="walk.wav" />
-        <file name="walk2.ogg" />
-        <file name="walk2.wav" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">
