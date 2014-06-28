@@ -215,3 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 *.autosave
 *.backup1
+
+*.uistate.xml
