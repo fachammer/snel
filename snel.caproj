@@ -13,14 +13,13 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Mikael Nilsson" id="CAMFTimeManager" version="1.100000024">Time Manager</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
@@ -41,7 +40,7 @@
     <pixel-rounding>1</pixel-rounding>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
-        <prop name="Clear background">Yes</prop>
+        <prop name="Clear background">No</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Scale inner</prop>
         <prop name="Fullscreen scaling">High quality</prop>
@@ -62,8 +61,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3188802338779478" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="1" />
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3188802338779478" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="1" />
                     <frame duration="1" hotspotX="0" hotspotY="1" />
                 </animation>
@@ -140,10 +138,6 @@
         <object-type name="Audio" sid="4290808755389356">
             <plugin id="Audio" />
         </object-type>
-        <object-type name="TiledBackground" sid="6592042984076576">
-            <plugin id="TiledBg" />
-            <texture />
-        </object-type>
         <object-type name="Gamepad" sid="6028973174576782">
             <plugin id="gamepad" />
         </object-type>
@@ -171,56 +165,6 @@
         </object-type>
         <object-type name="TimeManager" sid="6399985906500233">
             <plugin id="CAMFTimeManager" />
-        </object-type>
-        <object-type name="background" sid="5308766747253733">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3935749085610554" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="cloud" sid="5786729141391135">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8360107404854557" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.28125" y="0.28125" />
-                            <point x="0.5" y="0.1875" />
-                            <point x="0.75" y="0.25" />
-                            <point x="1" y="0.5" />
-                            <point x="0.75" y="0.75" />
-                            <point x="0.25" y="0.75" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="movingBlock" sid="6639524750385909">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="xRange" sid="7146349539090481" type="number" />
-                <instance-variable name="yRange" sid="854636731361692" type="number" />
-                <instance-variable name="speed" sid="4120363203415316" type="number" />
-                <instance-variable name="startX" sid="8087006408025306" type="number" />
-                <instance-variable name="startY" sid="2804662181402991" type="number" />
-                <instance-variable name="clockwise" sid="9200788704930968" type="boolean" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Solid" sid="8893487259798725">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Platform" sid="5413812980394192">
-                    <behavior id="Platform" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9925918487784268" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="deathZone" sid="964575553351072">
             <plugin id="Sprite" />
@@ -257,12 +201,6 @@
         <object-type name="Score1Label" sid="9984290464240711">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Restart" sid="8653163679528047">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="List" sid="9637343926553439">
-            <plugin id="List" />
-        </object-type>
         <object-type global="1" name="scores" sid="4437247198325376">
             <plugin id="Arr" />
         </object-type>
@@ -286,17 +224,29 @@
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7493524250346272" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7493524250346272" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="restartLabel" sid="801596096550909">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Mouse" sid="4303504378931048">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Tilemap" sid="9756812462725949">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
     </object-folder>
     <families />
-    <layout-folder expanded="1">
+    <layout-folder expanded="0">
         <layout>Game.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder expanded="0">
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
@@ -325,13 +275,18 @@
         <global-instance type="Browser" uid="15" />
         <global-instance type="TimeManager" uid="24" />
         <global-instance type="WebStorage" uid="103" />
+        <global-instance type="Mouse" uid="86" />
     </global-instances>
-    <sounds-folder expanded="1">
+    <sounds-folder expanded="0">
         <file name="jump.ogg" />
         <file name="jump.wav" />
+        <file name="walk.ogg" />
+        <file name="walk.wav" />
+        <file name="walk2.ogg" />
+        <file name="walk2.wav" />
     </sounds-folder>
     <music-folder expanded="1" />
-    <files-folder expanded="0">
+    <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
             <file name="icon-16.png" />
             <file name="icon-32.png" />
