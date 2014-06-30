@@ -243,7 +243,7 @@
         </object-type>
     </object-folder>
     <families />
-    <layout-folder expanded="0">
+    <layout-folder expanded="1">
         <layout>Game.xml</layout>
     </layout-folder>
     <event-folder expanded="0">
