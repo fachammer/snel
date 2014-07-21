@@ -42,7 +42,7 @@
     <configuration-settings>
         <prop name="Clear background">No</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Scale inner</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Any</prop>
@@ -52,7 +52,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-type name="block" sid="5638283647469054">
             <plugin id="Sprite" />
             <behaviors>
@@ -236,7 +236,7 @@
         <object-type name="Mouse" sid="4303504378931048">
             <plugin id="Mouse" />
         </object-type>
-        <object-type name="Tilemap" sid="9756812462725949">
+        <object-type name="Tilemap" sid="8157869802705665">
             <plugin id="Tilemap" />
             <texture />
             <tiles />
@@ -246,7 +246,7 @@
     <layout-folder expanded="1">
         <layout>Game.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>

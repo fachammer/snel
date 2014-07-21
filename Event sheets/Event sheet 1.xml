@@ -277,15 +277,15 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4246949128105917" title="PlatformReachability">
+        <event-group collapsed="1" description="" sid="4246949128105917" title="PlatformReachability">
             <sub-events>
-                <event-block any="1" sid="4627152093849053">
+                <event-block any="1" disabled="1" sid="4627152093849053">
                     <conditions>
                         <condition behavior="Platform" id="2" name="Is on floor" sid="2901772462584443" type="player" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="9099400220727602">
+                        <event-block disabled="1" sid="9099400220727602">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="7661778963913551" type="System">
                                     <param id="0" name="Object">block</param>
@@ -293,7 +293,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="9550863054094822">
+                                <event-block disabled="1" sid="9550863054094822">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="90482021745397" type="System">
                                             <param id="0" name="First value">player.Y - Function.Call(&quot;getJumpHeight&quot;) - 5</param>
@@ -307,7 +307,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="2696893723110222">
+                                <event-block disabled="1" sid="2696893723110222">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="5579487844365583" type="System" />
                                     </conditions>
@@ -319,7 +319,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="6410372854356894">
+                        <event-block disabled="1" sid="6410372854356894">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="752911353049033" type="System">
                                     <param id="0" name="Object">movingPlatform</param>
@@ -327,7 +327,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="5258160530908412">
+                                <event-block disabled="1" sid="5258160530908412">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="3262069871147906" type="System">
                                             <param id="0" name="First value">player.Y - Function.Call(&quot;getJumpHeight&quot;) - 10</param>
@@ -341,7 +341,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="7546353583828136">
+                                <event-block disabled="1" sid="7546353583828136">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="1229214016079423" type="System" />
                                     </conditions>
