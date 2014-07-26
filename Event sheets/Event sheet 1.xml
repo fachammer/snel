@@ -724,6 +724,142 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group collapsed="1" description="" sid="9442216586617722" title="JumpPathPrediction">
+            <sub-events>
+                <event-block sid="8215052201048686">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6082771828626897" type="Function">
+                            <param id="0" name="Name">&quot;xPosition&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="629408810743318" type="Function">
+                            <param id="0" name="Value">player.Platform.VectorX * Function.Param(0)+ player.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3534163642518156">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2870286199548929" type="Function">
+                            <param id="0" name="Name">&quot;yPosition&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="2612847643856511" type="Function">
+                            <param id="0" name="Value">player.Platform.Gravity * Function.Param(0) * Function.Param(0) / 2 - Function.Param(1) * Function.Param(0) + player.Y - player.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4848928664357592">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="458414903930086" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1381732259810365">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="2258553885461205" type="System">
+                                    <param id="0" name="Count">120</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5048071509627903" type="System">
+                                    <param id="0" name="Object to create">jumpPath</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7269990966863359">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="8267692039710115" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="jumpTime" sid="6065795121546455" static="0" type="number">0</variable>
+                        <variable constant="0" name="forwardedTime" sid="2211300996504552" static="0" type="number">0.05</variable>
+                        <event-block sid="3383201777907652">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="1874587477636248" type="System">
+                                    <param id="0" name="Object">jumpPath</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="7542714712612182" type="jumpPath">
+                                    <param id="0" name="X">Function.Call(&quot;xPosition&quot;, forwardedTime)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="9817128171788508" type="System">
+                                    <param id="0" name="Variable">forwardedTime</param>
+                                    <param id="1" name="Value">jumpTime / 30</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3030363340132945">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="3792294759648153" type="player" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4283563202198593">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6498191647332823" type="System">
+                                                    <param id="0" name="Variable">jumpTime</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;getJumpTime&quot;)</param>
+                                                </action>
+                                                <action id="-1" name="Set X" sid="9242777567866171" type="jumpPath">
+                                                    <param id="0" name="X">Function.Call(&quot;xPosition&quot;, forwardedTime)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7348979664947764">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="1253194660134961" type="System">
+                                                    <param id="0" name="Object">jumpPath</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="174147055851501" type="jumpPath">
+                                                    <param id="0" name="Y">Function.Call(&quot;yPosition&quot;, forwardedTime, player.Platform.JumpStrength)</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="1296428301451533" type="System">
+                                                    <param id="0" name="Variable">forwardedTime</param>
+                                                    <param id="1" name="Value">jumpTime / 30</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1134113788505874">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="5048432040495757" type="player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="5095443342740464" type="jumpPath">
+                                            <param id="0" name="Y">Function.Call(&quot;yPosition&quot;, forwardedTime, -player.Platform.VectorY)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4149311852034736">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6777503511157122" type="System">
+                                                    <param id="0" name="Variable">jumpTime</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;getJumpTime&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-block sid="8765481482219527">
             <conditions>
                 <condition id="6" name="On object clicked" sid="9980979128146563" type="Mouse">

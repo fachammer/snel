@@ -1,2 +1,1 @@
-- better indicate whether a platform can be reached
 - fix color change at first jump
