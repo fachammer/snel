@@ -1,6 +1,2 @@
-- make different paths better identifiable
-- indicate optimal time for jump
 - better indicate whether a platform can be reached
 - fix color change at first jump
-- Secrets
-- better textures
